@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\projectdatabase\\projectdatabasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\projectdatabase\\projectdatabasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\entities\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\entities\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\entities\\candidateoffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\entities\\candidateoffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\entities\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\entities\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\controllers\\candidatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\controllers\\candidatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\services\\candidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\services\\candidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|c:\\documents\\i-ciclo-2025\\progra_lv\\proyectoprogra4\\proyectoprogra4\\services\\icandidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54278586-6109-4C98-A630-EA948FD2ECF6}|ProyectoProgra4\\ProyectoProgra4.csproj|solutionrelative:proyectoprogra4\\services\\icandidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Program.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Program.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Program.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T05:08:52.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ICandidateService.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Services\\ICandidateService.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Services\\ICandidateService.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Services\\ICandidateService.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Services\\ICandidateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:49:59.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CandidateService.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Services\\CandidateService.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Services\\CandidateService.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Services\\CandidateService.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Services\\CandidateService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:49:15.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectDataBaseContext.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
+              "RelativeToolTip": "ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:38:06.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Offer.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Entities\\Offer.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Entities\\Offer.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Entities\\Offer.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Entities\\Offer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:34:03.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CandidateOffer.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Entities\\CandidateOffer.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Entities\\CandidateOffer.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Entities\\CandidateOffer.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Entities\\CandidateOffer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:33:16.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Candidate.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Entities\\Candidate.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Entities\\Candidate.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Entities\\Candidate.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Entities\\Candidate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:29:27.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CandidateController.cs",
+              "DocumentMoniker": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Controllers\\CandidateController.cs",
+              "RelativeDocumentMoniker": "ProyectoProgra4\\Controllers\\CandidateController.cs",
+              "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\Controllers\\CandidateController.cs",
+              "RelativeToolTip": "ProyectoProgra4\\Controllers\\CandidateController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:54:20.061Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
