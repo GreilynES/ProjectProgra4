@@ -16,3 +16,4 @@ namespace Proyecto_Final_PrograIV.Entities
         public List<CandidateOffer>? CandidateOffers { get; set; }
     }
 }
+//intento de git
