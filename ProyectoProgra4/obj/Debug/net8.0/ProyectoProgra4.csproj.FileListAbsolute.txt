@@ -105,3 +105,4 @@ C:\Users\Angélica\Documents\U\V Semestre\Progra\PROYECTO-I\ProjectProgra4\Proye
 C:\Users\Angélica\Documents\U\V Semestre\Progra\PROYECTO-I\ProjectProgra4\ProyectoProgra4\obj\Debug\net8.0\ProyectoProgra4.pdb
 C:\Users\Angélica\Documents\U\V Semestre\Progra\PROYECTO-I\ProjectProgra4\ProyectoProgra4\obj\Debug\net8.0\ProyectoProgra4.genruntimeconfig.cache
 C:\Users\Angélica\Documents\U\V Semestre\Progra\PROYECTO-I\ProjectProgra4\ProyectoProgra4\obj\Debug\net8.0\ref\ProyectoProgra4.dll
+C:\DOCUMENTS\I-CICLO-2025\Progra_lV\ProyectoProgra4\ProyectoProgra4\obj\Debug\net8.0\ProyectoProgra4.sourcelink.json
