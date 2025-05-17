@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj": {}
+    "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj": {}
   },
   "projects": {
-    "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj": {
+    "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
+        "projectUniqueName": "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
         "projectName": "ProyectoProgra4",
-        "projectPath": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
-        "packagesPath": "C:\\Users\\greil\\.nuget\\packages\\",
-        "outputPath": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\obj\\",
+        "projectPath": "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
+        "packagesPath": "C:\\Users\\Angélica\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\greil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Angélica\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

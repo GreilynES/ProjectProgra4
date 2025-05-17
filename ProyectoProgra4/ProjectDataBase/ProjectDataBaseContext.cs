@@ -17,8 +17,6 @@ namespace ProyectoProgra4.ProjectDataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-
             // Candidate * - * Offer (via CandidateOffer)
             modelBuilder.Entity<CandidateOffer>()
                 .HasKey(co => new { co.CandidateId, co.OfferId }); 
