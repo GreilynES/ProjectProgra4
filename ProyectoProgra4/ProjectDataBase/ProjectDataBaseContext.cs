@@ -34,5 +34,5 @@ namespace ProyectoProgra4.ProjectDataBase
                 .HasForeignKey(co => co.OfferId);
         }
     }
-}
+}//cambio
 

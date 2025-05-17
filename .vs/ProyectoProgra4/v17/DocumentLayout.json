@@ -42,8 +42,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -54,8 +58,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T05:08:52.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T05:08:52.351Z"
             },
             {
               "$type": "Document",
@@ -67,8 +70,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Services\\ICandidateService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:49:59.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T04:49:59.459Z"
             },
             {
               "$type": "Document",
@@ -80,8 +82,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Services\\CandidateService.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:49:15.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T04:49:15.403Z"
             },
             {
               "$type": "Document",
@@ -91,7 +92,7 @@
               "RelativeDocumentMoniker": "ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
               "ToolTip": "C:\\DOCUMENTS\\I-CICLO-2025\\Progra_lV\\ProyectoProgra4\\ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
               "RelativeToolTip": "ProyectoProgra4\\ProjectDataBase\\ProjectDataBaseContext.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAIwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAIwCMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T04:38:06.077Z",
               "EditorCaption": ""
@@ -106,8 +107,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Entities\\Offer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:34:03.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T04:34:03.023Z"
             },
             {
               "$type": "Document",
@@ -119,8 +119,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Entities\\CandidateOffer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:33:16.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T04:33:16.895Z"
             },
             {
               "$type": "Document",
@@ -132,8 +131,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Entities\\Candidate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:29:27.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T04:29:27.356Z"
             },
             {
               "$type": "Document",
@@ -145,8 +143,7 @@
               "RelativeToolTip": "ProyectoProgra4\\Controllers\\CandidateController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:54:20.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T04:54:20.061Z"
             }
           ]
         }
