@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Proyecto_Final_PrograIV.Services;
 using ProyectoProgra4.ProjectDataBase;
+using ProyectoProgra4.Services.CandidateC;
 using System;
 using System.Text;
 
@@ -10,7 +10,7 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ProjectDataBaseContext>();
-builder.Services.AddScoped<ICandidateService, CandidateService>();
+builder.Services.AddScoped<ICandidate, CandidateService>();
 
 builder.Services.AddCors(options =>
 {

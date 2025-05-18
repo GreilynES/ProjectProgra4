@@ -1,8 +1,10 @@
-﻿using Proyecto_Final_PrograIV.Entities;
+﻿
 
-namespace Proyecto_Final_PrograIV.Services
+using Proyecto_Final_PrograIV.Entities;
+
+namespace ProyectoProgra4.Services.CandidateC
 {
-    public interface ICandidateService
+    public interface ICandidate
     {
         public List<Candidate> GetAllCandidates();
         public Candidate GetCandidateById(int Id);

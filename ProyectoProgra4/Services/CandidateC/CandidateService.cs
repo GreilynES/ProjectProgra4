@@ -2,9 +2,9 @@
 using ProyectoProgra4.ProjectDataBase;
 using System.Xml.Linq;
 
-namespace Proyecto_Final_PrograIV.Services
+namespace ProyectoProgra4.Services.CandidateC
 {
-    public class CandidateService : ICandidateService
+    public class CandidateService : ICandidate
     {
         private readonly ProjectDataBaseContext _dbContext;
         public CandidateService(ProjectDataBaseContext dbContext)

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Proyecto_Final_PrograIV.Entities;
-using Proyecto_Final_PrograIV.Services;
+using ProyectoProgra4.Services.CandidateC;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -15,8 +15,8 @@ namespace Proyecto_Final_PrograIV.Controllers
     [ApiController]
     public class CandidateController : ControllerBase
     {
-        private readonly ICandidateService _candidateService;
-        public CandidateController(ICandidateService candidateService)
+        private readonly ICandidate _candidateService;
+        public CandidateController(ICandidate candidateService)
         {
             _candidateService = candidateService;
         }
