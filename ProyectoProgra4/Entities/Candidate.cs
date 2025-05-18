@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using ProyectoProgra4.Entities;
+using System.Text.Json.Serialization;
 
 namespace Proyecto_Final_PrograIV.Entities
 {
@@ -14,6 +15,7 @@ namespace Proyecto_Final_PrograIV.Entities
 
         [JsonIgnore]
         public List<CandidateOffer>? CandidateOffers { get; set; }
+        public List<CandidateSkill>? CandidateSkills { get; set; } //una oferta tiene una lista de skills
     }
 }
 //intento de git
