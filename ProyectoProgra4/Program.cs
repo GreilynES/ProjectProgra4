@@ -1,18 +1,21 @@
+﻿
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using ProyectoProgra4.Entities;
 using ProyectoProgra4.ProjectDataBase;
 using ProyectoProgra4.Services.CandidateC;
+using ProyectoProgra4.Services.CompanyC;
 using ProyectoProgra4.Services.OfferC;
-using System;
 using System.Text;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddScoped<ProjectDataBaseContext>();
 builder.Services.AddScoped<ICandidate, CandidateService>();
 builder.Services.AddScoped<IOffer, OfferService>();
+builder.Services.AddScoped<ICompany, CompanyService>();
 
 builder.Services.AddCors(options =>
 {
@@ -40,15 +43,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddControllers()
-    .AddNewtonsoftJson(x =>
- x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+// Add services to the container.
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
-builder.Services.AddDbContext<ProjectDataBaseContext>(options =>
-    options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -69,5 +67,38 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ProjectDataBaseContext>();
+
+    if (!context.Companies.Any())
+    {
+        context.Companies.AddRange(
+            new Company
+            {
+                Name = "Empresa Demo 1",
+                Email = "demo1@empresa.com",
+                WebSite = "https://demo1.empresa.com"
+            },
+            new Company
+            {
+                Name = "Empresa Demo 2",
+                Email = "demo2@empresa.com",
+                WebSite = "https://demo2.empresa.com"
+            },
+            new Company
+            {
+                Name = "Empresa Demo 3",
+                Email = "demo3@empresa.com",
+                WebSite = "https://demo3.empresa.com"
+            }
+        );
+
+        context.SaveChanges();
+        Console.WriteLine("🌱 Empresas seed cargadas en memoria.");
+    }
+}
+
 
 app.Run();

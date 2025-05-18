@@ -6,10 +6,10 @@ namespace ProyectoProgra4.ProjectDataBase
 {
     public class ProjectDataBaseContext : DbContext
     {
-        public ProjectDataBaseContext(DbContextOptions<ProjectDataBaseContext> options)
-     : base(options)
-        { }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseInMemoryDatabase(databaseName: "ProjectDataBase");
+        }
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<CandidateOffer> CandidateOffers { get; set; }
