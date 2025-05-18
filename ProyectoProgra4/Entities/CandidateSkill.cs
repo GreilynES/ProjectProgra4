@@ -4,7 +4,7 @@ namespace ProyectoProgra4.Entities
 {
     public class CandidateSkill
     {
-        public int IdCandidateSkill { get; set; }
+        public int Id { get; set; }
 
         public int CandidateId { get; set; }
         public int IdSkill { get; set; }

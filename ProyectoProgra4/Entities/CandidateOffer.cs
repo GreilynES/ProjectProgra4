@@ -4,7 +4,7 @@ namespace Proyecto_Final_PrograIV.Entities
 {
     public class CandidateOffer
     {
-        public int IdCandidateOffer { get; set; } //clave primaria
+        public int Id { get; set; } //clave primaria
         public int CandidateId { get; set; }
         public Candidate Candidate { get; set; }
 

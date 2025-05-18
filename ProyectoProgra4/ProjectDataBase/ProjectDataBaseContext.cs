@@ -6,10 +6,9 @@ namespace ProyectoProgra4.ProjectDataBase
 {
     public class ProjectDataBaseContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "JWTDataBase");
-        }
+        public ProjectDataBaseContext(DbContextOptions<ProjectDataBaseContext> options)
+     : base(options)
+        { }
 
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Offer> Offers { get; set; }
@@ -19,15 +18,13 @@ namespace ProyectoProgra4.ProjectDataBase
         public DbSet<OfferSkill> OfferSkills { get; set; }
         public DbSet<CandidateSkill> CandidateSkills { get; set; }
 
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            // CandidateOffer
             modelBuilder.Entity<CandidateOffer>()
-            .HasOne(co => co.Candidate)
-            .WithMany(c => c.CandidateOffers)
-            .HasForeignKey(co => co.CandidateId);
+                .HasOne(co => co.Candidate)
+                .WithMany(c => c.CandidateOffers)
+                .HasForeignKey(co => co.CandidateId);
 
             modelBuilder.Entity<CandidateOffer>()
                 .HasOne(co => co.Offer)
@@ -56,12 +53,11 @@ namespace ProyectoProgra4.ProjectDataBase
                 .WithMany(s => s.OfferSkills)
                 .HasForeignKey(os => os.SkillId);
 
-            // Offer–Company
+            // Offer – Company
             modelBuilder.Entity<Offer>()
                 .HasOne(o => o.Company)
                 .WithMany(c => c.Offers)
                 .HasForeignKey(o => o.IdCompany);
         }
     }
-}//cambio
-
+}

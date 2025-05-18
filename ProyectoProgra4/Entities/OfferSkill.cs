@@ -5,8 +5,8 @@ namespace ProyectoProgra4.Entities
 {
     public class OfferSkill
     {
-        [JsonIgnore]
-        public int IdOfferSkill { get; set; }
+        
+        public int Id { get; set; }
 
         public int IdOffer { get; set; }
         public int SkillId { get; set; }

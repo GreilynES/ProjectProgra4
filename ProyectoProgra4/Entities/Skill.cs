@@ -5,7 +5,7 @@ namespace ProyectoProgra4.Entities
     public class Skill
     {
         
-        public int IdSkill { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public List<OfferSkill>? OfferSkills { get; set; } //una skill tiene una lista de ofertas
