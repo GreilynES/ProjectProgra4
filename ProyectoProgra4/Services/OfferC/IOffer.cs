@@ -2,12 +2,12 @@
 
 namespace ProyectoProgra4.Services.OfferC
 {
-    public interface IOfferService
+    public interface IOffer
     {
-        Task<List<Offer>> GetAllOffersAsync();
-        Task<Offer?> GetOfferByIdAsync(int id);
-        Task<Offer> CreateOfferAsync(Offer offer);
-        Task<bool> UpdateOfferAsync(Offer offer);
-        Task<bool> DeleteOfferAsync(int id);
+        public List<Offer> GetAllOffers();
+        public Offer GetOfferById(int id);
+        public Offer AddOffer(Offer offer);
+        public Offer UpdateOffer(int id, Offer offer);
+        public void DeleteOffer(int id);
     }
 }

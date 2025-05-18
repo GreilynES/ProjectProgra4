@@ -10,7 +10,8 @@ namespace Proyecto_Final_PrograIV.Entities
         public string Description { get; set; }
         public int IdCompany { get; set; } //clave foranea
 
-        public Skill? Company { get; set; } //una oferta pertenece a una empresa
+        public Company? Company { get; set; } //una oferta pertenece a una empresa
+
         //[JsonIgnore]
         public List<CandidateOffer>? CandidateOffers { get; set; } //en offer tengo una lista de candidatos 
        

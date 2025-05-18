@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace ProyectoProgra4.Entities
 {
-    public class Skill
+    public class Company
     {
        
         public int Id { get; set; }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ProyectoProgra4.ProjectDataBase;
 using ProyectoProgra4.Services.CandidateC;
+using ProyectoProgra4.Services.OfferC;
 using System;
 using System.Text;
 
@@ -11,6 +12,7 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ProjectDataBaseContext>();
 builder.Services.AddScoped<ICandidate, CandidateService>();
+builder.Services.AddScoped<IOffer, OfferService>();
 
 builder.Services.AddCors(options =>
 {

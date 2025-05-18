@@ -1,56 +1,56 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Proyecto_Final_PrograIV.Entities;
+﻿using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.ProjectDataBase;
 
 namespace ProyectoProgra4.Services.OfferC
 {
-    public class OfferService : IOfferService
+    public class OfferService : IOffer
     {
-        private readonly ProjectDataBaseContext _context;
+        private readonly ProjectDataBaseContext _dbContext;
 
-        public OfferService(ProjectDataBaseContext context)
+        public OfferService(ProjectDataBaseContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
-        public async Task<List<Offer>> GetAllOffersAsync()
+        public List<Offer> GetAllOffers()
         {
-            return await _context.Offers
-                .Include(o => o.Company)
-                .Include(o => o.CandidateOffers)
-                .Include(o => o.OfferSkills)
-                .ToListAsync();
+            return _dbContext.Offers.ToList();
         }
 
-        public async Task<Offer?> GetOfferByIdAsync(int id)
+        public Offer GetOfferById(int id)
         {
-            return await _context.Offers
-                .Include(o => o.Company)
-                .Include(o => o.CandidateOffers)
-                .Include(o => o.OfferSkills)
-                .FirstOrDefaultAsync(o => o.Id == id);
-        }
-
-        public async Task<Offer> CreateOfferAsync(Offer offer)
-        {
-            _context.Offers.Add(offer);
-            await _context.SaveChangesAsync();
+            var offer = _dbContext.Offers.Find(id);
+            if (offer == null) throw new Exception("Offer not found");
             return offer;
         }
 
-        public async Task<bool> UpdateOfferAsync(Offer offer)
+        public Offer AddOffer(Offer offer)
         {
-            _context.Offers.Update(offer);
-            return await _context.SaveChangesAsync() > 0;
+            _dbContext.Offers.Add(offer);
+            _dbContext.SaveChanges();
+            return offer;
         }
 
-        public async Task<bool> DeleteOfferAsync(int id)
+        public Offer UpdateOffer(int id, Offer offer)
         {
-            var offer = await _context.Offers.FindAsync(id);
-            if (offer == null) return false;
-            _context.Offers.Remove(offer);
-            return await _context.SaveChangesAsync() > 0;
+            var existingOffer = _dbContext.Offers.Find(id);
+            if (existingOffer == null) throw new Exception("Offer not found");
+
+            existingOffer.Name = offer.Name;
+            existingOffer.Description = offer.Description;
+            // Agrega otros campos necesarios
+
+            _dbContext.SaveChanges();
+            return existingOffer;
+        }
+
+        public void DeleteOffer(int id)
+        {
+            var offer = _dbContext.Offers.Find(id);
+            if (offer == null) throw new Exception("Offer not found");
+
+            _dbContext.Offers.Remove(offer);
+            _dbContext.SaveChanges();
         }
     }
-
 }

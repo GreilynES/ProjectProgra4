@@ -13,7 +13,7 @@ namespace ProyectoProgra4.ProjectDataBase
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<CandidateOffer> CandidateOffers { get; set; }
-        public DbSet<Skill> Companies { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<OfferSkill> OfferSkills { get; set; }
         public DbSet<CandidateSkill> CandidateSkills { get; set; }
