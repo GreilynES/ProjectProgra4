@@ -4,8 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.ProjectDataBase;
 using ProyectoProgra4.Services.CandidateC;
+using ProyectoProgra4.Services.CandidateOfferC;
 using ProyectoProgra4.Services.CompanyC;
 using ProyectoProgra4.Services.OfferC;
+using ProyectoProgra4.Services.SkillC;
 using System.Text;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -16,6 +18,8 @@ builder.Services.AddScoped<ProjectDataBaseContext>();
 builder.Services.AddScoped<ICandidate, CandidateService>();
 builder.Services.AddScoped<IOffer, OfferService>();
 builder.Services.AddScoped<ICompany, CompanyService>();
+builder.Services.AddScoped<ISkill, SkillService>();
+builder.Services.AddScoped<ICandidateOffer, CandidateOfferService>();
 
 builder.Services.AddCors(options =>
 {
@@ -45,7 +49,9 @@ builder.Services.AddAuthorization();
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(x =>
+ x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

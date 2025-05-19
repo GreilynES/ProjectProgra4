@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Proyecto_Final_PrograIV.Entities
 {
@@ -6,10 +7,11 @@ namespace Proyecto_Final_PrograIV.Entities
     {
         public int Id { get; set; } //clave primaria
         public int CandidateId { get; set; }
-        public Candidate Candidate { get; set; }
-
         public int IdOffer { get; set; }
-        public Offer Offer { get; set; }
+        [JsonIgnore]
+        public Offer? Offer { get; set; }
+        [JsonIgnore]
+        public Candidate? Candidate { get; set; }
 
     }
 

@@ -36,7 +36,9 @@ namespace JWT_Test.Controllers
         {
             if (candidate.Email == "string" && candidate.Password == "string")
             {
-                var token = GenerateJwtToken(candidate.Email);
+                candidate.Role = "GUEST";
+                //generate token
+                var token = GenerateJwtToken(candidate.Email, candidate.Role);
 
                 return token;
             }
@@ -44,11 +46,12 @@ namespace JWT_Test.Controllers
             return "";
         }
 
-        private string GenerateJwtToken(string email)
+        private string GenerateJwtToken(string email, string role)
         {
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, email),
+                new Claim(ClaimTypes.Role, role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

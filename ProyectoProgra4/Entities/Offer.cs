@@ -12,7 +12,7 @@ namespace Proyecto_Final_PrograIV.Entities
 
         public Company? Company { get; set; } //una oferta pertenece a una empresa
 
-        //[JsonIgnore]
+        [JsonIgnore]
         public List<CandidateOffer>? CandidateOffers { get; set; } //en offer tengo una lista de candidatos 
        
         public List<OfferSkill>? OfferSkills { get; set; } //una oferta tiene una lista de skills
