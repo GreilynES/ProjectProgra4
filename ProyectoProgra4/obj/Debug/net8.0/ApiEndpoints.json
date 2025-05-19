@@ -197,6 +197,131 @@
     ]
   },
   {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
+    "Method": "Get",
+    "RelativePath": "api/CandidateOffer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Proyecto_Final_PrograIV.Entities.CandidateOffer, ProyectoProgra4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
+    "Method": "Post",
+    "RelativePath": "api/CandidateOffer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "candidateOffer",
+        "Type": "Proyecto_Final_PrograIV.Entities.CandidateOffer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Proyecto_Final_PrograIV.Entities.CandidateOffer",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
+    "Method": "Get",
+    "RelativePath": "api/CandidateOffer/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Proyecto_Final_PrograIV.Entities.CandidateOffer",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
+    "Method": "Put",
+    "RelativePath": "api/CandidateOffer/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "candidateOffer",
+        "Type": "Proyecto_Final_PrograIV.Entities.CandidateOffer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Proyecto_Final_PrograIV.Entities.CandidateOffer",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
+    "Method": "Delete",
+    "RelativePath": "api/CandidateOffer/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateSkillController",
     "Method": "Post",
     "RelativePath": "api/CandidateSkill",
@@ -230,8 +355,8 @@
   },
   {
     "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateSkillController",
-    "Method": "Get",
-    "RelativePath": "api/CandidateSkill/{candidateId}",
+    "Method": "GetByCandidate",
+    "RelativePath": "api/CandidateSkill/candidate/{candidateId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -244,7 +369,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Skill, ProyectoProgra4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ProyectoProgra4.Entities.CandidateSkill, ProyectoProgra4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

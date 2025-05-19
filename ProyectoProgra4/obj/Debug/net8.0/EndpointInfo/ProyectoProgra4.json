@@ -48,6 +48,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Candidate"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Candidate"
@@ -172,6 +177,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Candidate"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Candidate"
@@ -269,6 +279,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Candidate"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Candidate"
@@ -331,7 +346,219 @@
         }
       }
     },
-    "/api/CandidateSkill/{candidateId}": {
+    "/api/CandidateOffer": {
+      "get": {
+        "tags": [
+          "CandidateOffer"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CandidateOffer"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CandidateOffer"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CandidateOffer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CandidateOffer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CandidateOffer/{id}": {
+      "get": {
+        "tags": [
+          "CandidateOffer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CandidateOffer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateOffer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOffer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CandidateOffer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CandidateSkill/candidate/{candidateId}": {
       "get": {
         "tags": [
           "CandidateSkill"
@@ -355,7 +582,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Skill"
+                    "$ref": "#/components/schemas/CandidateSkill"
                   }
                 }
               },
@@ -363,7 +590,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Skill"
+                    "$ref": "#/components/schemas/CandidateSkill"
                   }
                 }
               },
@@ -371,7 +598,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Skill"
+                    "$ref": "#/components/schemas/CandidateSkill"
                   }
                 }
               }
@@ -387,6 +614,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateSkill"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CandidateSkill"
@@ -416,6 +648,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateSkill"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CandidateSkill"
@@ -483,6 +720,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Company"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Company"
@@ -580,6 +822,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Company"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Company"
@@ -685,6 +932,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Offer"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Offer"
@@ -782,6 +1034,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Offer"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Offer"
@@ -887,6 +1144,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Skill"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Skill"
@@ -984,6 +1246,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Skill"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Skill"
@@ -1110,27 +1377,6 @@
           "password": {
             "type": "string",
             "nullable": true
-          },
-          "offers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Offer"
-            },
-            "nullable": true
-          },
-          "candidateOffers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CandidateOffer"
-            },
-            "nullable": true
-          },
-          "candidateSkills": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CandidateSkill"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1146,15 +1392,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "candidate": {
-            "$ref": "#/components/schemas/Candidate"
-          },
           "idOffer": {
             "type": "integer",
             "format": "int32"
-          },
-          "offer": {
-            "$ref": "#/components/schemas/Offer"
           }
         },
         "additionalProperties": false
@@ -1234,13 +1474,6 @@
           "company": {
             "$ref": "#/components/schemas/Company"
           },
-          "candidateOffers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CandidateOffer"
-            },
-            "nullable": true
-          },
           "offerSkills": {
             "type": "array",
             "items": {
@@ -1284,20 +1517,6 @@
           },
           "name": {
             "type": "string",
-            "nullable": true
-          },
-          "offerSkills": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OfferSkill"
-            },
-            "nullable": true
-          },
-          "candidateSkills": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CandidateSkill"
-            },
             "nullable": true
           }
         },

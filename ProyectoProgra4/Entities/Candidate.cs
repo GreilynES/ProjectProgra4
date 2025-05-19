@@ -19,7 +19,7 @@ namespace Proyecto_Final_PrograIV.Entities
         public List<Offer>? Offers { get; set; } //una oferta tiene una lista de candidatos
         [JsonIgnore]
         public List<CandidateOffer>? CandidateOffers { get; set; }
- 
+        [JsonIgnore]
         public List<CandidateSkill>? CandidateSkills { get; set; } //una oferta tiene una lista de skills
     }
 }

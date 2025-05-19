@@ -5,7 +5,7 @@ namespace ProyectoProgra4.Entities
 {
     public class OfferSkill
     {
-        
+
         public int Id { get; set; }
 
         public int IdOffer { get; set; }

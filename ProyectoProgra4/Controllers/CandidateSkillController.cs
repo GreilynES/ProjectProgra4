@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProyectoProgra4.Services.CandidateSkillC;
 using ProyectoProgra4.Entities;
+using ProyectoProgra4.Services.CandidateSkillC;
 
 namespace Proyecto_Final_PrograIV.Controllers
 {
@@ -15,11 +15,11 @@ namespace Proyecto_Final_PrograIV.Controllers
             _candidateSkillService = candidateSkillService;
         }
 
-        // GET: api/CandidateSkill/5
-        [HttpGet("{candidateId}")]
-        public IEnumerable<Skill> Get(int candidateId)
+        // GET: api/CandidateSkill/candidate/5
+        [HttpGet("candidate/{candidateId}")]
+        public IEnumerable<CandidateSkill> GetByCandidate(int candidateId)
         {
-            return _candidateSkillService.GetSkillsByCandidateId(candidateId);
+            return _candidateSkillService.GetByCandidateId(candidateId);
         }
 
         // POST: api/CandidateSkill
@@ -27,7 +27,7 @@ namespace Proyecto_Final_PrograIV.Controllers
         public IActionResult Post([FromBody] CandidateSkill model)
         {
             _candidateSkillService.AddSkillToCandidate(model.CandidateId, model.IdSkill);
-            return Ok();
+            return Ok(new { message = "Skill agregada correctamente." });
         }
 
         // DELETE: api/CandidateSkill
@@ -35,7 +35,7 @@ namespace Proyecto_Final_PrograIV.Controllers
         public IActionResult Delete([FromBody] CandidateSkill model)
         {
             _candidateSkillService.RemoveSkillFromCandidate(model.CandidateId, model.IdSkill);
-            return Ok();
+            return Ok(new { message = "Skill eliminada correctamente." });
         }
     }
 }

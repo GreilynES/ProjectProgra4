@@ -5,8 +5,10 @@ using ProyectoProgra4.Entities;
 using ProyectoProgra4.ProjectDataBase;
 using ProyectoProgra4.Services.CandidateC;
 using ProyectoProgra4.Services.CandidateOfferC;
+using ProyectoProgra4.Services.CandidateSkillC;
 using ProyectoProgra4.Services.CompanyC;
 using ProyectoProgra4.Services.OfferC;
+using ProyectoProgra4.Services.OfferSkillC;
 using ProyectoProgra4.Services.SkillC;
 using System.Text;
 
@@ -20,6 +22,9 @@ builder.Services.AddScoped<IOffer, OfferService>();
 builder.Services.AddScoped<ICompany, CompanyService>();
 builder.Services.AddScoped<ISkill, SkillService>();
 builder.Services.AddScoped<ICandidateOffer, CandidateOfferService>();
+builder.Services.AddScoped<ICandidateSkill, CandidateSkillService>();
+builder.Services.AddScoped<IOfferSkill,  OfferSkillService>();
+
 
 builder.Services.AddCors(options =>
 {

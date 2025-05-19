@@ -1,4 +1,5 @@
-﻿using Proyecto_Final_PrograIV.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.ProjectDataBase;
 using System.Xml.Linq;
 
@@ -37,12 +38,21 @@ namespace ProyectoProgra4.Services.CandidateC
 
         public List<Candidate> GetAllCandidates()
         {
-            return _dbContext.Candidates.ToList();
+            return _dbContext.Candidates
+                .Include(c => c.CandidateSkills)
+                    .ThenInclude(cs => cs.Skill)
+                .Include(c => c.CandidateOffers)
+                .ToList();
         }
 
         public Candidate GetCandidateById(int Id)
         {
-            return _dbContext.Candidates.Find(Id);
+            return _dbContext.Candidates
+                .Include(c => c.CandidateSkills)
+                    .ThenInclude(cs => cs.Skill)
+                .Include(c => c.CandidateOffers)
+                    .ThenInclude(co => co.Offer)
+                .FirstOrDefault(c => c.Id == Id);
         }
 
 
