@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProyectoProgra4.DTO;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.Services.OfferSkillC;
 
@@ -17,10 +18,11 @@ namespace Proyecto_Final_PrograIV.Controllers
 
         // GET: api/OfferSkill
         [HttpGet]
-        public IEnumerable<OfferSkill> Get()
+        public IEnumerable<OfferSkillDTO> Get()
         {
             return _offerSkillService.GetAllOfferSkills();
         }
+
 
         // GET: api/OfferSkill/5
         [HttpGet("{id}")]

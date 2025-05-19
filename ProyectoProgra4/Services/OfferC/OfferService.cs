@@ -1,4 +1,5 @@
-﻿using Proyecto_Final_PrograIV.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.ProjectDataBase;
 
 namespace ProyectoProgra4.Services.OfferC
@@ -14,7 +15,11 @@ namespace ProyectoProgra4.Services.OfferC
 
         public List<Offer> GetAllOffers()
         {
-            return _dbContext.Offers.ToList();
+            return _dbContext.Offers
+                .Include(x => x.Company)
+                .Include(o => o.OfferSkills)
+                    .ThenInclude(os => os.Skill.Name)
+                .ToList();
         }
 
         public Offer GetOfferById(int id)

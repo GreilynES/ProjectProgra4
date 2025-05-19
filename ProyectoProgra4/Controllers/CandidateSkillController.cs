@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProyectoProgra4.DTO;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.Services.CandidateSkillC;
 
@@ -15,12 +16,13 @@ namespace Proyecto_Final_PrograIV.Controllers
             _candidateSkillService = candidateSkillService;
         }
 
-        // GET: api/CandidateSkill/candidate/5
+        //GetById CandidateSkill con DTO
         [HttpGet("candidate/{candidateId}")]
-        public IEnumerable<CandidateSkill> GetByCandidate(int candidateId)
+        public IEnumerable<CandidateSkillDTO> GetByCandidate(int candidateId)
         {
             return _candidateSkillService.GetByCandidateId(candidateId);
         }
+
 
         // POST: api/CandidateSkill
         [HttpPost]

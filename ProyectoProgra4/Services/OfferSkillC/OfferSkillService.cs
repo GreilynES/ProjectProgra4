@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProyectoProgra4.DTO;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.ProjectDataBase;
 
@@ -36,10 +37,23 @@ namespace ProyectoProgra4.Services.OfferSkillC
             }
         }
 
-        public List<OfferSkill> GetAllOfferSkills()
+        public List<OfferSkillDTO> GetAllOfferSkills()
         {
-            return _dbContext.OfferSkills.Include(x => x.Offer).Include(x => x.Skill).ToList();
+            return _dbContext.OfferSkills
+                .Include(os => os.Offer)
+                .Include(os => os.Skill)
+                .Select(os => new OfferSkillDTO
+                {
+                    OfferId = os.IdOffer,
+                    CompanyName = os.Offer.Company.Name,
+                    OfferName = os.Offer.Name,
+                    OfferDescription = os.Offer.Description,
+                    SkillId = os.SkillId,
+                    SkillName = os.Skill.Name
+                })
+                .ToList();
         }
+
 
         public OfferSkill GetOfferSkillsById(int Id)
         {

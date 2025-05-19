@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProyectoProgra4.DTO;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.ProjectDataBase;
 
@@ -13,12 +14,19 @@ namespace ProyectoProgra4.Services.CandidateSkillC
             _dbContext = dbContext;
         }
 
-        public List<CandidateSkill> GetByCandidateId(int candidateId)
+        public List<CandidateSkillDTO> GetByCandidateId(int candidateId)
         {
             return _dbContext.CandidateSkills
-                .Include(cs => cs.Candidate) 
-                .Include(cs => cs.Skill)
                 .Where(cs => cs.CandidateId == candidateId)
+                .Select(cs => new CandidateSkillDTO
+                {
+                    CandidateId = cs.CandidateId,
+                    CandidateName = cs.Candidate.Name,
+                    CandidateFirstLastname = cs.Candidate.FirstLastName,
+                    CandidateSecondLastname = cs.Candidate.SecondLastName,
+                    SkillId = cs.IdSkill,
+                    SkillName = cs.Skill.Name
+                })
                 .ToList();
         }
 
