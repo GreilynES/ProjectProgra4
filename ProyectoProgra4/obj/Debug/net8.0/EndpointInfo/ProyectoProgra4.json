@@ -1550,10 +1550,6 @@
       "CandidateOffer": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "candidateId": {
             "type": "integer",
             "format": "int32"
@@ -1568,10 +1564,6 @@
       "CandidateSkill": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "candidateId": {
             "type": "integer",
             "format": "int32"
@@ -1579,12 +1571,6 @@
           "idSkill": {
             "type": "integer",
             "format": "int32"
-          },
-          "candidate": {
-            "$ref": "#/components/schemas/Candidate"
-          },
-          "skill": {
-            "$ref": "#/components/schemas/Skill"
           }
         },
         "additionalProperties": false
@@ -1622,10 +1608,6 @@
       "Company": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
             "type": "string",
             "nullable": true
@@ -1637,13 +1619,6 @@
           "email": {
             "type": "string",
             "nullable": true
-          },
-          "offers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Offer"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1651,10 +1626,6 @@
       "Offer": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
             "type": "string",
             "nullable": true
@@ -1666,16 +1637,6 @@
           "idCompany": {
             "type": "integer",
             "format": "int32"
-          },
-          "company": {
-            "$ref": "#/components/schemas/Company"
-          },
-          "offerSkills": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OfferSkill"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1683,10 +1644,6 @@
       "OfferSkill": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "idOffer": {
             "type": "integer",
             "format": "int32"
@@ -1694,12 +1651,6 @@
           "skillId": {
             "type": "integer",
             "format": "int32"
-          },
-          "offer": {
-            "$ref": "#/components/schemas/Offer"
-          },
-          "skill": {
-            "$ref": "#/components/schemas/Skill"
           }
         },
         "additionalProperties": false
@@ -1737,10 +1688,6 @@
       "Skill": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
             "type": "string",
             "nullable": true

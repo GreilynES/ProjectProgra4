@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 public class Skill
 {
-
+    [JsonIgnore]
     public int Id { get; set; }
     public string Name { get; set; }
 

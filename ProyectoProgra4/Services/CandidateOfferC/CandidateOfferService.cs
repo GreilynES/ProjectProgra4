@@ -13,9 +13,10 @@ namespace ProyectoProgra4.Services.CandidateOfferC
             _dbContext = dbContext;
         }
 
+
         public List<CandidateOffer> GetAllCandidateOffers()
         {
-            return _dbContext.CandidateOffers.Include(x => x.Offer).Include(x => x.Candidate).ToList();
+            return _dbContext.CandidateOffers.Include(x => x.Offer).Include(x => x.Offer.Company).Include(x => x.Candidate).ToList();
         }
 
         public CandidateOffer GetCandidateOfferById(int id)
