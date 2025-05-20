@@ -1,49 +1,48 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Proyecto_Final_PrograIV.Entities;
+using ProyectoProgra4.Entities;
+using ProyectoProgra4.ProjectDataBase;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace JWT_Test.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
-        // GET: api/<AuthController>
-        [HttpGet]
-        [Authorize]
-        public IEnumerable<string> Get()
+        private readonly ProjectDataBaseContext _dbContext;
+
+        public AuthController(ProjectDataBaseContext dbContext)
         {
-            return new string[] { "value1", "value2" };
+            _dbContext = dbContext;
         }
 
-        // DELETE api/<AuthController>/5
-        [HttpDelete("{id}")]
-        [Authorize(Roles = "ADMIN")]
-        public string Delete(int id)
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] Candidate loginData)
         {
-            return "Deleted";
-        }
+            // Buscar el usuario por correo
+            var user = _dbContext.Candidates.FirstOrDefault(c => c.Email == loginData.Email);
 
-        // POST api/<AuthController>
-        [HttpPost]
-        public string Post([FromBody] Candidate candidate)
-        {
-            if (candidate.Email == "string" && candidate.Password == "string")
+            // Verificar si existe y si la contraseña coincide (plaintext por ahora)
+            if (user == null || user.Password != loginData.Password)
             {
-                candidate.Role = "GUEST";
-                //generate token
-                var token = GenerateJwtToken(candidate.Email, candidate.Role);
-
-                return token;
+                return Unauthorized("Email o contraseña incorrectos");
             }
 
-            return "";
+            // Generar token con el rol (o GUEST si está nulo)
+
+            else
+            {
+                var token = GenerateJwtToken(user.Email, user.Role = user.Role ?? "CANDIDATE");
+                _dbContext.SaveChanges();
+                return Ok(new { token });
+            }
         }
 
         private string GenerateJwtToken(string email, string role)
@@ -62,11 +61,11 @@ namespace JWT_Test.Controllers
                 issuer: "yourdomain.com",
                 audience: "yourdomain.com",
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(12000),
-                signingCredentials: creds);
+                expires: DateTime.Now.AddHours(2),
+                signingCredentials: creds
+            );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
     }
 }

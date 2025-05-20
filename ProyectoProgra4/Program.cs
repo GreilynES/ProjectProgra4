@@ -23,7 +23,7 @@ builder.Services.AddScoped<ICompany, CompanyService>();
 builder.Services.AddScoped<ISkill, SkillService>();
 builder.Services.AddScoped<ICandidateOffer, CandidateOfferService>();
 builder.Services.AddScoped<ICandidateSkill, CandidateSkillService>();
-builder.Services.AddScoped<IOfferSkill,  OfferSkillService>();
+builder.Services.AddScoped<IOfferSkill, OfferSkillService>();
 
 
 builder.Services.AddCors(options =>
@@ -47,6 +47,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = "yourdomain.com",
             ValidAudience = "yourdomain.com",
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_super_secret_key_your_super_secret_key"))
+
         };
     });
 
