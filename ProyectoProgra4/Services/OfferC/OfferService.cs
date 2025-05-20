@@ -18,7 +18,7 @@ namespace ProyectoProgra4.Services.OfferC
             return _dbContext.Offers
                 .Include(x => x.Company)
                 .Include(o => o.OfferSkills)
-                    .ThenInclude(os => os.Skill.Name)
+                    .ThenInclude(os => os.Skill)
                 .ToList();
         }
 

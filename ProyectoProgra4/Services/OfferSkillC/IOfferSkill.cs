@@ -10,5 +10,7 @@ namespace ProyectoProgra4.Services.OfferSkillC
         public OfferSkill AddOfferSkill(OfferSkill offerSkill);
         public OfferSkill UpdateOfferSkill(int Id, OfferSkill offerSkill);
         public void DeleteOfferSkill(int Id);
+        List<OfferSkillDTO> GetMatchedOffersByCandidate(int candidateId);
+
     }
 }

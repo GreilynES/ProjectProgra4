@@ -81,5 +81,32 @@ namespace ProyectoProgra4.Services.OfferSkillC
                 throw new Exception("Candidate not found");
             }
         }
+
+        public List<OfferSkillDTO> GetMatchedOffersByCandidate(int candidateId)
+        {
+            var candidateSkillIds = _dbContext.CandidateSkills
+                .Where(cs => cs.CandidateId == candidateId)
+                .Select(cs => cs.IdSkill)
+                .ToList();
+
+            var matchedOfferSkills = _dbContext.OfferSkills
+                .Include(os => os.Offer)
+                    .ThenInclude(o => o.Company)
+                .Include(os => os.Skill)
+                .Where(os => candidateSkillIds.Contains(os.SkillId))
+                .Select(os => new OfferSkillDTO
+                {
+                    OfferId = os.IdOffer,
+                    CompanyName = os.Offer.Company.Name,
+                    OfferName = os.Offer.Name,
+                    OfferDescription = os.Offer.Description,
+                    SkillId = os.SkillId,
+                    SkillName = os.Skill.Name
+                })
+                .ToList();
+
+            return matchedOfferSkills;
+        }
+
     }
 }

@@ -641,35 +641,33 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/CandidateSkill/{candidateId}/{skillId}": {
       "delete": {
         "tags": [
           "CandidateSkill"
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CandidateSkill"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CandidateSkill"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CandidateSkill"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CandidateSkill"
-              }
+        "parameters": [
+          {
+            "name": "candidateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skillId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -1309,6 +1307,55 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/OfferSkill/match/{candidateId}": {
+      "get": {
+        "tags": [
+          "OfferSkill"
+        ],
+        "parameters": [
+          {
+            "name": "candidateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OfferSkillDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OfferSkillDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OfferSkillDTO"
+                  }
+                }
+              }
+            }
           }
         }
       }

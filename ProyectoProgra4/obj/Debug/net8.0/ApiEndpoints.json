@@ -340,14 +340,19 @@
   {
     "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateSkillController",
     "Method": "Delete",
-    "RelativePath": "api/CandidateSkill",
+    "RelativePath": "api/CandidateSkill/{candidateId}/{skillId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "ProyectoProgra4.Entities.CandidateSkill",
+        "Name": "candidateId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "skillId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -750,6 +755,32 @@
       {
         "Type": "System.Void",
         "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.OfferSkillController",
+    "Method": "GetMatchedOffers",
+    "RelativePath": "api/OfferSkill/match/{candidateId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "candidateId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoProgra4.DTO.OfferSkillDTO, ProyectoProgra4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]

@@ -1568,23 +1568,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Angélica\\.nuget\\packages\\": {},
+    "C:\\Users\\kathe\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
+      "projectUniqueName": "C:\\Users\\kathe\\OneDrive\\Documentos\\Progra IV\\backendIIP\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
       "projectName": "ProyectoProgra4",
-      "projectPath": "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
-      "packagesPath": "C:\\Users\\Angélica\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Angélica\\Documents\\U\\V Semestre\\Progra\\PROYECTO-I\\ProjectProgra4\\ProyectoProgra4\\obj\\",
+      "projectPath": "C:\\Users\\kathe\\OneDrive\\Documentos\\Progra IV\\backendIIP\\ProjectProgra4\\ProyectoProgra4\\ProyectoProgra4.csproj",
+      "packagesPath": "C:\\Users\\kathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kathe\\OneDrive\\Documentos\\Progra IV\\backendIIP\\ProjectProgra4\\ProyectoProgra4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Angélica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1593,6 +1593,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1611,7 +1612,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1657,7 +1658,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

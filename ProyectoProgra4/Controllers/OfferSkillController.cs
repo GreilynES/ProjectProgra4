@@ -51,5 +51,12 @@ namespace Proyecto_Final_PrograIV.Controllers
         {
             _offerSkillService.DeleteOfferSkill(id);
         }
+
+        // GET: api/OfferSkill/match/5
+        [HttpGet("match/{candidateId}")]
+        public ActionResult<List<OfferSkillDTO>> GetMatchedOffers(int candidateId)
+        {
+            return _offerSkillService.GetMatchedOffersByCandidate(candidateId);
+        }
     }
 }

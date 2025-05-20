@@ -32,11 +32,10 @@ namespace Proyecto_Final_PrograIV.Controllers
             return Ok(new { message = "Skill agregada correctamente." });
         }
 
-        // DELETE: api/CandidateSkill
-        [HttpDelete]
-        public IActionResult Delete([FromBody] CandidateSkill model)
+        [HttpDelete("{candidateId}/{skillId}")]
+        public IActionResult Delete(int candidateId, int skillId)
         {
-            _candidateSkillService.RemoveSkillFromCandidate(model.CandidateId, model.IdSkill);
+            _candidateSkillService.RemoveSkillFromCandidate(candidateId, skillId);
             return Ok(new { message = "Skill eliminada correctamente." });
         }
     }
