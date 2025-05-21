@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.ProjectDataBase;
-using System.Xml.Linq;
 
 namespace ProyectoProgra4.Services.CandidateC
 {
     public class CandidateService : ICandidate
     {
         private readonly ProjectDataBaseContext _dbContext;
+
         public CandidateService(ProjectDataBaseContext dbContext)
         {
             _dbContext = dbContext;
@@ -15,9 +15,9 @@ namespace ProyectoProgra4.Services.CandidateC
 
         public Candidate AddCandidate(Candidate candidate)
         {
+            candidate.Role = "CANDIDATE"; // ✅ se asigna el rol al registrarse
             _dbContext.Candidates.Add(candidate);
             _dbContext.SaveChanges();
-
             return candidate;
         }
 
@@ -27,7 +27,6 @@ namespace ProyectoProgra4.Services.CandidateC
             if (DeleteCandidate != null)
             {
                 _dbContext.Candidates.Remove(DeleteCandidate);
-
                 _dbContext.SaveChanges();
             }
             else
@@ -55,7 +54,6 @@ namespace ProyectoProgra4.Services.CandidateC
                 .FirstOrDefault(c => c.Id == Id);
         }
 
-
         public Candidate UpdateCandidate(int Id, Candidate candidate)
         {
             Candidate updateCandidate = _dbContext.Candidates.Find(Id);
@@ -68,7 +66,6 @@ namespace ProyectoProgra4.Services.CandidateC
                 updateCandidate.Password = candidate.Password;
                 _dbContext.SaveChanges();
                 return updateCandidate;
-
             }
             else
             {

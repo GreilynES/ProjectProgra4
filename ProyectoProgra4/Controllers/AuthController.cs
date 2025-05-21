@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using Proyecto_Final_PrograIV.Entities;
-using ProyectoProgra4.Entities;
+using ProyectoProgra4.DTO;
 using ProyectoProgra4.ProjectDataBase;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -11,7 +8,6 @@ using System.Text;
 
 namespace JWT_Test.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -24,25 +20,31 @@ namespace JWT_Test.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] Candidate loginData)
+        public IActionResult Login([FromBody] LoginDTO loginData)
         {
-            // Buscar el usuario por correo
+            if (string.IsNullOrWhiteSpace(loginData.Email) || string.IsNullOrWhiteSpace(loginData.Password))
+                return BadRequest("Faltan datos");
+
             var user = _dbContext.Candidates.FirstOrDefault(c => c.Email == loginData.Email);
 
-            // Verificar si existe y si la contraseña coincide (plaintext por ahora)
             if (user == null || user.Password != loginData.Password)
-            {
-                return Unauthorized("Email o contraseña incorrectos");
-            }
+                return Unauthorized("Credenciales incorrectas");
 
-            // Generar token con el rol (o GUEST si está nulo)
+            var token = GenerateJwtToken(user.Email, user.Role ?? "CANDIDATE");
 
-            else
+            return Ok(new
             {
-                var token = GenerateJwtToken(user.Email, user.Role = user.Role ?? "CANDIDATE");
-                _dbContext.SaveChanges();
-                return Ok(new { token });
-            }
+                token,
+                candidate = new
+                {
+                    user.Id,
+                    user.Name,
+                    user.FirstLastName,
+                    user.SecondLastName,
+                    user.Email,
+                    user.Role
+                }
+            });
         }
 
         private string GenerateJwtToken(string email, string role)

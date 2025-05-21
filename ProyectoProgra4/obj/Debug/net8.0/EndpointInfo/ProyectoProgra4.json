@@ -14,22 +14,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/Candidate"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Candidate"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Candidate"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Candidate"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             }
           }
@@ -41,10 +41,21 @@
         }
       }
     },
-    "/api/Candidate": {
+    "/api/Candidate/{id}": {
       "get": {
         "tags": [
           "Candidate"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -52,32 +63,25 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Candidate"
-                  }
+                  "$ref": "#/components/schemas/Candidate"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Candidate"
-                  }
+                  "$ref": "#/components/schemas/Candidate"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Candidate"
-                  }
+                  "$ref": "#/components/schemas/Candidate"
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/Candidate": {
       "post": {
         "tags": [
           "Candidate"
@@ -126,129 +130,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/Candidate/{id}": {
-      "get": {
-        "tags": [
-          "Candidate"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Candidate"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Candidate"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Candidate"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Candidate"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Candidate"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Candidate"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Candidate"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Candidate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Candidate"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Candidate"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Candidate"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Candidate"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -1617,6 +1498,20 @@
             "nullable": true
           },
           "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDTO": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
             "type": "string",
             "nullable": true
           }
