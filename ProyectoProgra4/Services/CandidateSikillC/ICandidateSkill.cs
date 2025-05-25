@@ -9,5 +9,6 @@ namespace ProyectoProgra4.Services.CandidateSkillC
         List<CandidateSkillDTO> GetByCandidateId(int candidateId);
         void AddSkillToCandidate(int candidateId, int skillId);
         void RemoveSkillFromCandidate(int candidateId, int skillId);
+        bool Remove(int candidateId, int skillId);
     }
 }

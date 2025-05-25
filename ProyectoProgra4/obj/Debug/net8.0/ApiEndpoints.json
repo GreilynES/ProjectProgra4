@@ -211,6 +211,22 @@
   {
     "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateSkillController",
     "Method": "Delete",
+    "RelativePath": "api/CandidateSkill",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ProyectoProgra4.DTO.CandidateSkillDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateSkillController",
+    "Method": "Delete",
     "RelativePath": "api/CandidateSkill/{candidateId}/{skillId}",
     "HttpMethod": "DELETE",
     "IsController": true,

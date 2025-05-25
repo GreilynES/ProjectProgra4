@@ -38,5 +38,14 @@ namespace Proyecto_Final_PrograIV.Controllers
             _candidateSkillService.RemoveSkillFromCandidate(candidateId, skillId);
             return Ok(new { message = "Skill eliminada correctamente." });
         }
+
+        [HttpDelete]
+        public IActionResult Delete([FromBody] CandidateSkillDTO dto)
+        {
+            var deleted = _candidateSkillService.Remove(dto.CandidateId, dto.SkillId);
+            if (deleted)
+                return Ok();
+            return NotFound("No se encontró la relación CandidateSkill.");
+        }
     }
 }

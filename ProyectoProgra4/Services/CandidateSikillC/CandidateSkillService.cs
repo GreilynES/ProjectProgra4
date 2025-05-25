@@ -58,5 +58,18 @@ namespace ProyectoProgra4.Services.CandidateSkillC
                 _dbContext.SaveChanges();
             }
         }
+        public bool Remove(int candidateId, int skillId)
+        {
+            var entity = _dbContext.CandidateSkills
+                .FirstOrDefault(cs => cs.CandidateId == candidateId && cs.IdSkill == skillId);
+
+            if (entity == null)
+                return false;
+
+            _dbContext.CandidateSkills.Remove(entity);
+            _dbContext.SaveChanges();
+            return true;
+        }
+
     }
 }
