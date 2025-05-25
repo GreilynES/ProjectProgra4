@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.ProjectDataBase;
@@ -16,6 +15,7 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Inyección de dependencias
 builder.Services.AddScoped<ProjectDataBaseContext>();
 builder.Services.AddScoped<ICandidate, CandidateService>();
 builder.Services.AddScoped<IOffer, OfferService>();
@@ -25,16 +25,17 @@ builder.Services.AddScoped<ICandidateOffer, CandidateOfferService>();
 builder.Services.AddScoped<ICandidateSkill, CandidateSkillService>();
 builder.Services.AddScoped<IOfferSkill, OfferSkillService>();
 
-
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                      });
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        });
 });
 
+// Autenticación JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -47,24 +48,23 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = "yourdomain.com",
             ValidAudience = "yourdomain.com",
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_super_secret_key_your_super_secret_key"))
-
         };
     });
 
 builder.Services.AddAuthorization();
 
-// Add services to the container.
-
+// Controladores y configuración de JSON
 builder.Services.AddControllers()
     .AddNewtonsoftJson(x =>
- x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -72,45 +72,16 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors(MyAllowSpecificOrigins);
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
+// 🌱 Crear DB y aplicar seed (HasData)
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ProjectDataBaseContext>();
-
-    if (!context.Companies.Any())
-    {
-        context.Companies.AddRange(
-            new Company
-            {
-                Name = "Empresa Demo 1",
-                Email = "demo1@empresa.com",
-                WebSite = "https://demo1.empresa.com"
-            },
-            new Company
-            {
-                Name = "Empresa Demo 2",
-                Email = "demo2@empresa.com",
-                WebSite = "https://demo2.empresa.com"
-            },
-            new Company
-            {
-                Name = "Empresa Demo 3",
-                Email = "demo3@empresa.com",
-                WebSite = "https://demo3.empresa.com"
-            }
-        );
-
-        context.SaveChanges();
-        Console.WriteLine("🌱 Empresas seed cargadas en memoria.");
-    }
+    context.Database.EnsureCreated(); // Carga datos de HasData
 }
-
 
 app.Run();

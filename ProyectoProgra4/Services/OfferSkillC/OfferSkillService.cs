@@ -84,16 +84,25 @@ namespace ProyectoProgra4.Services.OfferSkillC
 
         public List<OfferSkillDTO> GetMatchedOffersByCandidate(int candidateId)
         {
+            // 1. Obtener IDs de habilidades del candidato
             var candidateSkillIds = _dbContext.CandidateSkills
                 .Where(cs => cs.CandidateId == candidateId)
                 .Select(cs => cs.IdSkill)
                 .ToList();
 
-            var matchedOfferSkills = _dbContext.OfferSkills
+            // 2. Obtener IDs de ofertas que coinciden con al menos una habilidad
+            var matchingOfferIds = _dbContext.OfferSkills
+                .Where(os => candidateSkillIds.Contains(os.SkillId))
+                .Select(os => os.IdOffer)
+                .Distinct()
+                .ToList();
+
+            // 3. De esas ofertas, traer TODAS sus habilidades
+            var allSkillsFromMatchingOffers = _dbContext.OfferSkills
                 .Include(os => os.Offer)
                     .ThenInclude(o => o.Company)
                 .Include(os => os.Skill)
-                .Where(os => candidateSkillIds.Contains(os.SkillId))
+                .Where(os => matchingOfferIds.Contains(os.IdOffer))
                 .Select(os => new OfferSkillDTO
                 {
                     OfferId = os.IdOffer,
@@ -105,8 +114,9 @@ namespace ProyectoProgra4.Services.OfferSkillC
                 })
                 .ToList();
 
-            return matchedOfferSkills;
+            return allSkillsFromMatchingOffers;
         }
+
 
     }
 }
