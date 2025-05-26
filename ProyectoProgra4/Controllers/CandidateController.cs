@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.Services.CandidateC;
 
@@ -14,8 +15,9 @@ namespace Proyecto_Final_PrograIV.Controllers
         {
             _candidateService = candidateService;
         }
-
+        
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<Candidate> Get(int id)
         {
             var candidate = _candidateService.GetCandidateById(id);
