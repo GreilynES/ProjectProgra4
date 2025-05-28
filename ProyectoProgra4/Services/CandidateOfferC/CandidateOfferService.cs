@@ -41,7 +41,7 @@ namespace ProyectoProgra4.Services.CandidateOfferC
             if (existing == null) throw new Exception("CandidateOffer not found");
 
             existing.CandidateId = candidateOffer.CandidateId;
-            existing.IdOffer = candidateOffer.IdOffer;
+            existing.OfferId = candidateOffer.OfferId;
 
             _dbContext.SaveChanges();
             return existing;

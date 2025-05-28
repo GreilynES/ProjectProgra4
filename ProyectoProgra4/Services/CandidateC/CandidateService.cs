@@ -72,5 +72,11 @@ namespace ProyectoProgra4.Services.CandidateC
                 throw new Exception("Candidate not found");
             }
         }
+
+
+        public Candidate? GetCandidateByEmail(string email)
+        {
+            return _dbContext.Candidates.FirstOrDefault(c => c.Email == email);
+        }
     }
 }

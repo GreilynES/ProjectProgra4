@@ -69,7 +69,7 @@ namespace ProyectoProgra4.ProjectDataBase
             modelBuilder.Entity<CandidateOffer>()
                 .HasOne(co => co.Offer)
                 .WithMany(o => o.CandidateOffers)
-                .HasForeignKey(co => co.IdOffer);
+                .HasForeignKey(co => co.OfferId);
 
             // 🔹 Relaciones CandidateSkill
             modelBuilder.Entity<CandidateSkill>()

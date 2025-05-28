@@ -134,6 +134,28 @@
         }
       }
     },
+    "/api/Candidate/email/{email}": {
+      "get": {
+        "tags": [
+          "Candidate"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CandidateOffer": {
       "get": {
         "tags": [
@@ -1469,7 +1491,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "idOffer": {
+          "offerId": {
             "type": "integer",
             "format": "int32"
           }

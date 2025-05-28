@@ -15,7 +15,7 @@ namespace Proyecto_Final_PrograIV.Controllers
         {
             _candidateService = candidateService;
         }
-        
+
         [HttpGet("{id}")]
         [Authorize]
         public ActionResult<Candidate> Get(int id)
@@ -33,5 +33,13 @@ namespace Proyecto_Final_PrograIV.Controllers
             candidate.Role = "CANDIDATE";
             return _candidateService.AddCandidate(candidate);
         }
+
+        [HttpGet("email/{email}")]
+        public ActionResult CheckCandidateEmail(string email)
+        {
+            var candidate = _candidateService.GetCandidateByEmail(email);
+            return candidate != null ? Ok() : NotFound();
+        }
+
     }
 }
