@@ -35,11 +35,12 @@ namespace Proyecto_Final_PrograIV.Controllers
         }
 
         [HttpGet("email/{email}")]
-        public ActionResult CheckCandidateEmail(string email)
+        public ActionResult<bool> CheckCandidateEmail(string email)
         {
             var candidate = _candidateService.GetCandidateByEmail(email);
-            return candidate != null ? Ok() : NotFound();
+            return Ok(candidate != null);
         }
+
 
     }
 }
