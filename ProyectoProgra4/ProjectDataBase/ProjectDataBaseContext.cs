@@ -47,13 +47,13 @@ namespace ProyectoProgra4.ProjectDataBase
             // 🔹 Relación Oferta-Habilidad (OfferSkill)
             // Usa la clave compuesta {IdOffer, SkillId}
             modelBuilder.Entity<OfferSkill>().HasData(
-                new OfferSkill { IdOffer = 1, SkillId = 2}, // Oferta 1 requiere SQL
-                new OfferSkill { IdOffer = 1, SkillId = 3 }, // Oferta 1 requiere Nest
-                new OfferSkill { IdOffer = 2, SkillId = 1 },  // Oferta 2 requiere C#
-                new OfferSkill { IdOffer = 2, SkillId = 2 },
-                new OfferSkill { IdOffer = 2, SkillId = 3 },
-                new OfferSkill { IdOffer = 3, SkillId = 1 },
-                new OfferSkill { IdOffer = 3, SkillId = 4 }
+                new OfferSkill { Id=1, IdOffer = 1, SkillId = 2}, // Oferta 1 requiere SQL
+                new OfferSkill { Id = 2, IdOffer = 1, SkillId = 3 }, // Oferta 1 requiere Nest
+                new OfferSkill { Id = 3, IdOffer = 2, SkillId = 1 },  // Oferta 2 requiere C#
+                new OfferSkill { Id = 4, IdOffer = 2, SkillId = 2 },
+                new OfferSkill { Id = 5, IdOffer = 2, SkillId = 3 },
+                new OfferSkill { Id = 6, IdOffer = 3, SkillId = 1 },
+                new OfferSkill { Id = 7, IdOffer = 3, SkillId = 4 }
             );
 
             // 🔹 Clave compuesta para OfferSkill
@@ -61,6 +61,13 @@ namespace ProyectoProgra4.ProjectDataBase
                 .HasKey(os => new { os.IdOffer, os.SkillId });
 
             // 🔹 Relaciones CandidateOffer
+            modelBuilder.Entity<OfferSkill>()
+             .HasKey(cs => cs.Id); // Composite key
+
+            modelBuilder.Entity<OfferSkill>()
+                .Property(cs => cs.Id)
+                .ValueGeneratedOnAdd();
+
             modelBuilder.Entity<CandidateOffer>()
                 .HasOne(co => co.Candidate)
                 .WithMany(c => c.CandidateOffers)
@@ -72,6 +79,13 @@ namespace ProyectoProgra4.ProjectDataBase
                 .HasForeignKey(co => co.OfferId);
 
             // 🔹 Relaciones CandidateSkill
+            modelBuilder.Entity<OfferSkill>()
+            .HasKey(cs => cs.Id); // Composite key
+
+            modelBuilder.Entity<OfferSkill>()
+                .Property(cs => cs.Id)
+                .ValueGeneratedOnAdd();
+
             modelBuilder.Entity<CandidateSkill>()
                 .HasOne(cs => cs.Candidate)
                 .WithMany(c => c.CandidateSkills)
@@ -83,6 +97,13 @@ namespace ProyectoProgra4.ProjectDataBase
                 .HasForeignKey(cs => cs.IdSkill);
 
             // 🔹 Relaciones OfferSkill
+            modelBuilder.Entity<OfferSkill>()
+            .HasKey(cs => cs.Id); // Composite key
+
+            modelBuilder.Entity<OfferSkill>()
+                .Property(cs => cs.Id)
+                .ValueGeneratedOnAdd();
+
             modelBuilder.Entity<OfferSkill>()
                 .HasOne(os => os.Offer)
                 .WithMany(o => o.OfferSkills)

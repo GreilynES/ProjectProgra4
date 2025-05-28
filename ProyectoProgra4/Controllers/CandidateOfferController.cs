@@ -24,7 +24,7 @@ namespace Proyecto_Final_PrograIV.Controllers
 
         // GET api/<CandidateOfferController>/5
         [HttpGet("{id}")]
-        public CandidateOffer Get(int id)
+        public IEnumerable<Offer> Get(int id)
         {
             return _candidateOfferService.GetCandidateOfferById(id);
         }

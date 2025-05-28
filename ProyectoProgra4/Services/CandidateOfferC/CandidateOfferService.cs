@@ -19,11 +19,28 @@ namespace ProyectoProgra4.Services.CandidateOfferC
             return _dbContext.CandidateOffers.Include(x => x.Offer).Include(x => x.Offer.Company).Include(x => x.Candidate).ToList();
         }
 
-        public CandidateOffer GetCandidateOfferById(int id)
+        public List<Offer> GetCandidateOfferById(int id)
         {
-            var offer = _dbContext.CandidateOffers.Find(id);
-            if (offer == null) throw new Exception("CandidateOffer not found");
-            return offer;
+            var offers = _dbContext.CandidateOffers
+            .Where(co => co.CandidateId == id)
+            .Include(co => co.Offer)
+            .ThenInclude(o => o.Company)
+            .Include(co => co.Offer)
+            .ThenInclude(o => o.OfferSkills)
+            .ThenInclude(os => os.Skill)
+            .Select(co => co.Offer)
+            .ToList();
+
+            if (offers == null)
+            {
+                return null;
+            }
+
+            return offers;
+
+            //var offer = _dbContext.CandidateOffers.Find(id);
+            //if (offer == null) throw new Exception("CandidateOffer not found");
+            //return offer;
         }
 
         public CandidateOffer AddCandidateOffer(CandidateOffer candidateOffer)
