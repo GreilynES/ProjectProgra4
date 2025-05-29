@@ -30,16 +30,20 @@ namespace Proyecto_Final_PrograIV.Controllers
         [HttpPost]
         public ActionResult<Candidate> Post([FromBody] Candidate candidate)
         {
-            candidate.Role = "CANDIDATE";
-            return _candidateService.AddCandidate(candidate);
+            var validation = _candidateService.AddCandidate(candidate);
+            if (validation == null)
+            {
+                return NotFound ("Ya existe un candidato con ese correo electrónico.");
+            }
+            return Ok(validation);
         }
 
-        [HttpGet("email/{email}")]
-        public ActionResult<bool> CheckCandidateEmail(string email)
-        {
-            var candidate = _candidateService.GetCandidateByEmail(email);
-            return Ok(candidate != null);
-        }
+        //[HttpGet("email/{email}")]
+        //public ActionResult<bool> CheckCandidateEmail(string email)
+        //{
+        //    var candidate = _candidateService.GetCandidateByEmail(email);
+        //    return Ok(candidate != null);
+        //}
 
 
     }

@@ -41,6 +41,7 @@ namespace JWT_Test.Controllers
                     user.Name,
                     user.FirstLastName,
                     user.SecondLastName,
+                    user.PhoneNumber,
                     user.Email,
                     user.Role
                 }

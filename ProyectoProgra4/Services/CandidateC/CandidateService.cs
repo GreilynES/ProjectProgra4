@@ -15,10 +15,26 @@ namespace ProyectoProgra4.Services.CandidateC
 
         public Candidate AddCandidate(Candidate candidate)
         {
-            candidate.Role = "CANDIDATE"; // ✅ se asigna el rol al registrarse
-            _dbContext.Candidates.Add(candidate);
-            _dbContext.SaveChanges();
-            return candidate;
+            if (candidate == null)
+            {
+                return null;
+            }
+
+            else
+            {
+                Candidate? Data = _dbContext.Candidates.Where(x => x.Email == candidate.Email).FirstOrDefault();
+                if (Data != null)
+                {
+                    return null;
+                }
+                else
+                {
+                    candidate.Role = "CANDIDATE";
+                    _dbContext.Candidates.Add(candidate);
+                    _dbContext.SaveChanges();
+                    return candidate;
+                }
+            }   
         }
 
         public void DeleteCandidate(int Id)
@@ -74,9 +90,9 @@ namespace ProyectoProgra4.Services.CandidateC
         }
 
 
-        public Candidate? GetCandidateByEmail(string email)
-        {
-            return _dbContext.Candidates.FirstOrDefault(c => c.Email == email);
-        }
+        //public Candidate? GetCandidateByEmail(string email)
+        //{
+        //    return _dbContext.Candidates.FirstOrDefault(c => c.Email == email);
+        //}
     }
 }

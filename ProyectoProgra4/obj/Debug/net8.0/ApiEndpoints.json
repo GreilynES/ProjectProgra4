@@ -68,32 +68,6 @@
     ]
   },
   {
-    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateController",
-    "Method": "CheckCandidateEmail",
-    "RelativePath": "api/Candidate/email/{email}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
     "Method": "Get",
     "RelativePath": "api/CandidateOffer",

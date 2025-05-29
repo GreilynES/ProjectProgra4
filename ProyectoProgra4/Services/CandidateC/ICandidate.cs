@@ -9,6 +9,6 @@ namespace ProyectoProgra4.Services.CandidateC
         Candidate AddCandidate(Candidate candidate);
         Candidate UpdateCandidate(int Id, Candidate candidate);
         void DeleteCandidate(int Id);
-        Candidate? GetCandidateByEmail(string email);
+        //Candidate? GetCandidateByEmail(string email);
     }
 }
