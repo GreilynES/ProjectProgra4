@@ -45,11 +45,24 @@ namespace ProyectoProgra4.Services.CandidateOfferC
 
         public CandidateOffer AddCandidateOffer(CandidateOffer candidateOffer)
         {
+            // Verificar si ya existe una postulación para esa oferta y candidato
+            var exists = _dbContext.CandidateOffers.Any(co =>
+                co.CandidateId == candidateOffer.CandidateId &&
+                co.OfferId == candidateOffer.OfferId
+            );
+
+            if (exists)
+            {
+                throw new InvalidOperationException("Ya te has postulado a esta oferta.");
+            }
+
+            // Si no existe, se agrega normalmente
             _dbContext.CandidateOffers.Add(candidateOffer);
             _dbContext.SaveChanges();
 
             return candidateOffer;
         }
+
 
 
         public CandidateOffer UpdateCandidateOffer(int id, CandidateOffer candidateOffer)
