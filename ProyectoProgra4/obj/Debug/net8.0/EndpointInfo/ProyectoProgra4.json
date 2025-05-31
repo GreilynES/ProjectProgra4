@@ -355,6 +355,38 @@
         }
       }
     },
+    "/api/CandidateOffer/{candidateId}/{offerId}": {
+      "delete": {
+        "tags": [
+          "CandidateOffer"
+        ],
+        "parameters": [
+          {
+            "name": "candidateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offerid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CandidateSkill/candidate/{candidateId}": {
       "get": {
         "tags": [
@@ -1457,6 +1489,10 @@
             "nullable": true
           },
           "secondLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },

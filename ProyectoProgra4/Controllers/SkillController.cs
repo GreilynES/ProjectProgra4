@@ -13,15 +13,6 @@ namespace Proyecto_Final_PrograIV.Controllers
         public SkillController(ISkill skillService)
         {
             _skillService = skillService;
-
-            // Seed de habilidades fijas si no existen aún
-            if (!_skillService.GetAllSkills().Any())
-            {
-                _skillService.AddSkill(new Skill { Name = "C#" });
-                _skillService.AddSkill(new Skill { Name = "SQL" });
-                _skillService.AddSkill(new Skill { Name = "Nest" });
-                _skillService.AddSkill(new Skill { Name = "MySQL" });
-            }
         }
 
         // GET: api/Skill

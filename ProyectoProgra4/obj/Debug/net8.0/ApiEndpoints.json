@@ -115,6 +115,27 @@
   },
   {
     "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
+    "Method": "Delete",
+    "RelativePath": "api/CandidateOffer/{candidateId}/{offerId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "candidateId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "offerid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Proyecto_Final_PrograIV.Controllers.CandidateOfferController",
     "Method": "Get",
     "RelativePath": "api/CandidateOffer/{id}",
     "HttpMethod": "GET",

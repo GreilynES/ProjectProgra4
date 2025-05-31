@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.Services.CandidateOfferC;
+using ProyectoProgra4.Services.CandidateSkillC;
 
 namespace Proyecto_Final_PrograIV.Controllers
 {
@@ -49,5 +50,14 @@ namespace Proyecto_Final_PrograIV.Controllers
         {
             _candidateOfferService.DeleteCandidateOffer(id);
         }
+
+        [HttpDelete("{candidateId}/{offerId}")]
+        public IActionResult Delete(int candidateId, int offerid)
+        {
+            _candidateOfferService.RemoveOfferFromCandidate(candidateId, offerid);
+            return Ok(new { message = "Offer eliminada correctamente." });
+        }
+
     }
+
 }

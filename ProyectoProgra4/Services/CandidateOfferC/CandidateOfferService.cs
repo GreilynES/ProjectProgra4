@@ -85,5 +85,17 @@ namespace ProyectoProgra4.Services.CandidateOfferC
             _dbContext.CandidateOffers.Remove(offer);
             _dbContext.SaveChanges();
         }
+
+        public void RemoveOfferFromCandidate(int candidateId, int offerid)
+        {
+            var record = _dbContext.CandidateOffers
+                .FirstOrDefault(cs => cs.CandidateId == candidateId && cs.OfferId == offerid);
+
+            if (record != null)
+            {
+                _dbContext.CandidateOffers.Remove(record);
+                _dbContext.SaveChanges();
+            }
+        }
     }
 }

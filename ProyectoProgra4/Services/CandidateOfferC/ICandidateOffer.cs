@@ -9,5 +9,6 @@ namespace ProyectoProgra4.Services.CandidateOfferC
         CandidateOffer AddCandidateOffer(CandidateOffer candidateOffer);
         CandidateOffer UpdateCandidateOffer(int id, CandidateOffer candidateOffer);
         void DeleteCandidateOffer(int id);
+        void RemoveOfferFromCandidate(int candidateId, int offerid);
     }
 }
