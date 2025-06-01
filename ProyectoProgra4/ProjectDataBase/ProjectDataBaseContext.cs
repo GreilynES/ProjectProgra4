@@ -81,7 +81,78 @@ namespace ProyectoProgra4.ProjectDataBase
                     Name = "Scrum Master / Project Coordinator",
                     Description = "Digital Finance is seeking a certified Scrum Master with experience managing development teams. Responsible for facilitating Scrum ceremonies, removing obstacles, and ensuring effective delivery of digital financial products.",
                     IdCompany = 6
+                },
+                new Offer
+                {
+                    Id = 8,
+                    Name = "Mobile App Developer",
+                    Description = "Looking for a developer with experience in building mobile apps using Flutter or React Native. Must have experience with state management and deployment processes.",
+                    IdCompany = 1
+                },
+                new Offer
+                {
+                    Id = 9,
+                    Name = "UI/UX Designer",
+                    Description = "Seeking a creative UI/UX designer to improve user interfaces and user experiences across our digital products. Knowledge of Figma or Adobe XD required.",
+                    IdCompany = 2
+                },
+                new Offer
+                {
+                    Id = 10,
+                    Name = "DevOps Engineer",
+                    Description = "Hiring a DevOps Engineer with experience in CI/CD pipelines, Docker, Kubernetes, and cloud platforms like AWS or Azure.",
+                    IdCompany = 3
+                },
+                new Offer
+                {
+                    Id = 11,
+                    Name = "Cybersecurity Analyst",
+                    Description = "We need a cybersecurity specialist to manage vulnerabilities, perform risk assessments, and lead security audits.",
+                    IdCompany = 4
+                },
+                new Offer
+                {
+                    Id = 12,
+                    Name = "AI/Machine Learning Engineer",
+                    Description = "Seeking an ML Engineer experienced in building and deploying models using TensorFlow, PyTorch or Scikit-learn.",
+                    IdCompany = 5
+                },
+                new Offer
+                {
+                    Id = 13,
+                    Name = "Product Manager",
+                    Description = "Looking for a product manager to lead cross-functional teams, define roadmaps, and drive product vision and execution.",
+                    IdCompany = 6
+                },
+                new Offer
+                {
+                    Id = 14,
+                    Name = "Backend Developer (Node.js)",
+                    Description = "Hiring backend developers skilled in Node.js, Express, and MongoDB for scalable RESTful API development.",
+                    IdCompany = 1
+                },
+                new Offer
+                {
+                    Id = 15,
+                    Name = "Cloud Solutions Architect",
+                    Description = "Looking for an experienced cloud architect to design and implement infrastructure on AWS and Azure.",
+                    IdCompany = 2
+                },
+                new Offer
+                {
+                    Id = 16,
+                    Name = "Business Intelligence Analyst",
+                    Description = "Seeking BI analyst to create dashboards, analyze KPIs, and provide insights using Power BI or Tableau.",
+                    IdCompany = 3
+                },
+                new Offer
+                {
+                    Id = 17,
+                    Name = "Technical Support Specialist",
+                    Description = "Customer-focused support specialist needed for tier-2 technical issues. Experience with CRM and troubleshooting required.",
+                    IdCompany = 4
                 }
+
             );
 
             // 🔹 skill seed
