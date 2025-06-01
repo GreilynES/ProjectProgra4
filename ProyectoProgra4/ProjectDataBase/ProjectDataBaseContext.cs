@@ -191,7 +191,27 @@ namespace ProyectoProgra4.ProjectDataBase
                 new OfferSkill { Id = 18, IdOffer = 6, SkillId = 4 },
                 new OfferSkill { Id = 19, IdOffer = 6, SkillId = 8 },
                 new OfferSkill { Id = 20, IdOffer = 7, SkillId = 10 },
-                new OfferSkill { Id = 21, IdOffer = 7, SkillId = 9 }
+                new OfferSkill { Id = 21, IdOffer = 7, SkillId = 9 },
+                new OfferSkill { Id = 22, IdOffer = 8, SkillId = 5 },  
+                new OfferSkill { Id = 23, IdOffer = 8, SkillId = 6 },  
+                new OfferSkill { Id = 24, IdOffer = 9, SkillId = 9 },  
+                new OfferSkill { Id = 25, IdOffer = 9, SkillId = 5 },  
+                new OfferSkill { Id = 26, IdOffer = 10, SkillId = 7 }, 
+                new OfferSkill { Id = 27, IdOffer = 10, SkillId = 4 }, 
+                new OfferSkill { Id = 28, IdOffer = 10, SkillId = 6 }, 
+                new OfferSkill { Id = 29, IdOffer = 11, SkillId = 9 }, 
+                new OfferSkill { Id = 30, IdOffer = 11, SkillId = 10 },
+                new OfferSkill { Id = 31, IdOffer = 12, SkillId = 7 },
+                new OfferSkill { Id = 32, IdOffer = 12, SkillId = 8 }, 
+                new OfferSkill { Id = 33, IdOffer = 13, SkillId = 10 },
+                new OfferSkill { Id = 34, IdOffer = 14, SkillId = 6 }, 
+                new OfferSkill { Id = 35, IdOffer = 14, SkillId = 9 }, 
+                new OfferSkill { Id = 36, IdOffer = 15, SkillId = 2 }, 
+                new OfferSkill { Id = 37, IdOffer = 15, SkillId = 4 }, 
+                new OfferSkill { Id = 38, IdOffer = 16, SkillId = 2 }, 
+                new OfferSkill { Id = 39, IdOffer = 16, SkillId = 9 }, 
+                new OfferSkill { Id = 40, IdOffer = 17, SkillId = 9 }, 
+                new OfferSkill { Id = 41, IdOffer = 17, SkillId = 6 } 
             );
 
             // 🔹 composite key for OfferSkill
