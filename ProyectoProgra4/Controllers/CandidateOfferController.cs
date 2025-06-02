@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto_Final_PrograIV.Entities;
 using ProyectoProgra4.Services.CandidateOfferC;
 using ProyectoProgra4.Services.CandidateSkillC;
 
 namespace Proyecto_Final_PrograIV.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CandidateOfferController : ControllerBase

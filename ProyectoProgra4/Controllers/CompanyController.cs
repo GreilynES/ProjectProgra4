@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProyectoProgra4.Entities;
 using ProyectoProgra4.Services.CompanyC;
 
 namespace Proyecto_Final_PrograIV.Controllers
 {
+    [Authorize ]
     [Route("api/[controller]")]
     [ApiController]
     public class CompanyController : ControllerBase
