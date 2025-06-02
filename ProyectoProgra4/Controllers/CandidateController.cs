@@ -5,7 +5,6 @@ using ProyectoProgra4.Services.CandidateC;
 
 namespace Proyecto_Final_PrograIV.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CandidateController : ControllerBase
